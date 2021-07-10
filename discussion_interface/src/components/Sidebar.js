@@ -1,20 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/Sidebar.css'
 import SearchIcon from '@material-ui/icons/Search'
-import BorderColorOutlinedIcon from '@material-ui/icons/BorderColorOutlined'
 import { Avatar, IconButton } from '@material-ui/core'
 import SidebarThread from './SidebarThread'
-import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined'
 import QuestionAnswerOutlinedIcon from '@material-ui/icons/QuestionAnswerOutlined'
 import SettingsIcon from '@material-ui/icons/Settings'
 import db, { auth } from '../firebase'
 import { useSelector } from 'react-redux'
 import { selectThreadId } from '../features/counter/threadSlice'
 import { selectUser } from '../features/counter/userSlice'
-import { Link,Redirect} from 'react-router-dom'
 import {MdAddToQueue} from 'react-icons/md'
 import {RiVideoAddFill} from 'react-icons/ri'
-import firebase from 'firebase'
 
 const Sidebar = () => {
 

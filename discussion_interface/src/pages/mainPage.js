@@ -5,12 +5,7 @@ import Login from './Login'
 import DiscussionsPage from './DiscussionsPage';
 import { login, logout, selectUser } from '../features/counter/userSlice';
 import {auth} from '../firebase'
-import { BrowserRouter, Route, Switch,withRouter } from "react-router-dom";
-import db from '../firebase';
-import VidChatTest from './vidChatTest';
-import CreateRoom from './CreateRoom';
-import Room from './Room';
-import ContactsList from './contactsList';
+
 
 function MainPage() { 
 
@@ -18,8 +13,10 @@ function MainPage() {
   const dispatch = useDispatch();
 
   useEffect(() =>{
+
+    
     auth.onAuthStateChanged((authUser) =>{
-      if(authUser){
+      if(authUser){             //on succesful authentication and login  dispatch the login reducer
         dispatch(login({
           uid: authUser.uid,
           photo: authUser.photoURL,
@@ -27,21 +24,24 @@ function MainPage() {
           email: authUser.email
         }))
       } else {
-        dispatch(logout())
+        dispatch(logout())           // dispatch logout reducer on logout
       }
       console.log(authUser)
     })
+
+    // reminding the user before quiting the application
     window.addEventListener('beforeunload',(e)=>{
       e.preventDefault();
       e.returnValue='';
     })
   },[dispatch])
 
+    //Based on whether the user is validated the respective page is loaded 
   return (
   
     <>
       <div className="App">
-          {user ? <DiscussionsPage /> : <Login />}
+          {user ? <DiscussionsPage /> : <Login />} 
       </div>
     </>
     );

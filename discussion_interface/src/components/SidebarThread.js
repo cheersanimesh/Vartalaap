@@ -5,7 +5,7 @@ import '../styles/SidebarThread.css'
 import db from '../firebase'
 import { setThread } from '../features/counter/threadSlice'
 
-const SidebarThread = ({ id, threadName,date,endTime,startTime,agenda,owner,photogr}) => {
+const SidebarThread = ({ id, threadName,date,endTime,startTime,agenda,owner,photo}) => {
 
     const dispatch = useDispatch();
     const [threadInfo, setThreadInfo] = useState([])

@@ -2,8 +2,7 @@ import { Button } from '@material-ui/core'
 import React from 'react'
 import { auth, provider} from '../firebase';
 import '../styles/Login.css'
-import pic from '../images/peopleSpeaking.jpeg'
-import pic2 from '../images/peopleSpeaking2.png'
+import VartalaapLogo from '../images/VartalaapLogo.png'
 
 const Login = () => {
     
@@ -17,7 +16,7 @@ const Login = () => {
             <div className = "login">
                 <div className = "login__vartalaap">
                     <img 
-                        src = {pic2}
+                        src = {VartalaapLogo}
                         alt = "Vartalaap logo"
                     />
                     <h1>Vartalaap</h1>
