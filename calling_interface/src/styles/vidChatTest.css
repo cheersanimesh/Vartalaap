@@ -1,0 +1,84 @@
+.vh-75{
+    height: 75vh;
+}
+.vh-25{
+    height:25vh;
+}
+.vh-100{
+    height: 100vh;
+}
+.vw-75{
+    width: 75vw;
+}
+.vw-25{
+    width:25vw;
+}
+.d-flex{
+    display: flex;
+    text-align: center;
+}
+.m-auto{
+    margin: auto;
+}
+.btn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 10%;
+    padding-right: 10px;
+    margin: 10px;
+}
+.btn2{
+    border-radius: 50%;
+    background-color: brown;
+}
+.ownVideo{
+    width:100px;
+}
+.inpstyle{
+    display: inline;
+}
+.messageStyle{
+    display: block;
+    width: 50%;
+    background-color: aqua;
+    color: brown;
+}
+.ulstyle{
+    
+}
+.outerboundary{
+    background-color: bisque;
+}
+.chats{
+    display: flex;
+    flex: 0.75;
+    flex-direction: column;
+    height: inherit;
+    width: inherit;
+    background-color: azure;
+}
+.chats__header{
+    border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+    justify-content: space-between;
+}
+.chats__messages{
+    position:absolute;
+    top:10vh;
+    width:25vw;
+    height: 50vh;
+    overflow-wrap: break-word;
+    overflow:scroll;
+    background-color: white;
+}
+.chats__input{
+    position: relative;
+    top: 60vh;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: transparent;
+    border-top: 1px solid rgb(190, 190, 190, 0.1);
+  }
+.videos{
+    position: relative;
+}
