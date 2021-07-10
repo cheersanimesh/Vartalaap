@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Route, Switch,withRouter } from "react-router-dom";
+import Room from './pages/Room';
+import JoinCreate from './pages/JoinCreate';
+import 'semantic-ui-css/semantic.min.css'
+import CreateRoom from './pages/CreateRoom';
+import VidChatTest from './pages/vidChatTest';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/VidChatTest' component={VidChatTest} />
+        <Route path ='/createRoom' component={CreateRoom} />
+        <Route path='/room/:roomID' component={Room} />
+        <Route path='/' component= {() => {
+          return(
+          <div className="main"> 
+            <JoinCreate />
+          </div>
+          );
+          }} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

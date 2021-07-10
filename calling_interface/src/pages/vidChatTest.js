@@ -7,7 +7,7 @@ import {FcVideoCall,FcNoVideo} from 'react-icons/fc';
 import {MdScreenShare, MdStopScreenShare} from 'react-icons/md';
 import {FiSend} from 'react-icons/fi';
 import {IoHandRightSharp} from 'react-icons/io5';
-import '../styles/vidChatTest.css'
+import '../styles/Room.css'
 import { DropdownButton,Dropdown } from 'react-bootstrap'; 
 
 const StyledVideo = styled.video`

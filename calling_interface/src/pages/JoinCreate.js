@@ -1,9 +1,9 @@
 import React, { useEffect,useState } from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import { Link } from 'react-router-dom';
-import '../styles/contactsList.css'
+import '../styles/JoinCreate.css'
 
-const ContactsList = (props) =>{
+const JoinCreate = (props) =>{
 
     function joinCall (){
       var roomId= prompt('enter room id')
@@ -23,4 +23,4 @@ const ContactsList = (props) =>{
     );
 }
 
-export default ContactsList;
+export default JoinCreate;
