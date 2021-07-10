@@ -1,7 +1,7 @@
 import { useRef,useEffect } from "react";
 import StyledVideo from "./StyledVideo";
 
-
+// a custom video element
 const VideoElement = (props) => {
     const ref = useRef();
 

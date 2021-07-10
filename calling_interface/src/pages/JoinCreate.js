@@ -5,9 +5,10 @@ import '../styles/JoinCreate.css'
 
 const JoinCreate = (props) =>{
 
+    //joinCall enables to user to join the user to join the meeting with a given link
     function joinCall (){
       var roomId= prompt('enter room id')
-      const newWindow = window.open(roomId, '_blank', 'noopener,noreferrer')
+      const newWindow = window.open(roomId, '_blank', 'noopener,noreferrer') 
       if(newWindow)
       {
         newWindow.opener(null);

@@ -6,24 +6,29 @@ import { FiSend } from "react-icons/fi";
 import '../styles/Room.css'
 
 const ChatArea = ({userName}) =>{
-    const [message, setMessage]= useState();
-    const [messages, setMessages]= useState([])
-    const socketRef = useRef();
+    const [message, setMessage]= useState();            // to store the chat message being entered
+    const [messages, setMessages]= useState([])         // to store the messages
+    const socketConn = useRef();                            
     
     useEffect(()=>{
-        socketRef.current= io.connect("https://boxing-syrup-20682.herokuapp.com")
-        socketRef.current.on('chat message',(msg)=>{
+        socketConn.current= io.connect("https://boxing-syrup-20682.herokuapp.com")   // a new connection to pass message between clients
+        
+        socketConn.current.on('chat message',(msg)=>{        // handling on chat message recieved event
             console.log('recieved message')
             console.log(msg)
             setMessages(messages => [...messages,msg])
         })
+
     },[])
     const handleInput=(e) =>{
-        setMessage(e.target.value);
+        setMessage(e.target.value);      // Handling on Change of value in the input field
     }
+
     const sendMessage= () =>{
+        // emits the message to other clients through socket channel and also appends the message
+         // to message list
         setMessages(messages => [...messages,{name:userName, message}])
-        socketRef.current.emit('chat message',{
+        socketConn.current.emit('chat message',{
             name:userName,
             message:message
         }
@@ -32,9 +37,11 @@ const ChatArea = ({userName}) =>{
     }
     return(
         <div className="chats">
+            {/* Heading for chats element */}
             <div className="chats_header">
-                <h1>Chats: </h1>
+                <h1>Chats: </h1>        
             </div>
+            {/* Displaying the Chats as a list */}
             <div className="chats__messages">
                 <ul className="chat">
                     {messages.map((msg) =>(
@@ -48,6 +55,7 @@ const ChatArea = ({userName}) =>{
                     )}
                 </ul>
             </div>
+            {/* The input and the submit area*/}
                 <div className="chats__input">
                     <input type = "text" onChange={handleInput} value={message} />
                         <Button

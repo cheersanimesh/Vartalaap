@@ -3,9 +3,10 @@ import { v1 as uuid } from "uuid";
 import '../styles/createRoom.css'
 
 const CreateRoom = (props) => {
+    //handling the oncreate event.
     function create() {
         const id = uuid();
-        props.history.push(`/room/${id}`);
+        props.history.push(`/room/${id}`);     // routing to the link with the uuid generated
     }
 
 
