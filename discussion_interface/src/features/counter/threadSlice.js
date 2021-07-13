@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const threadSlice = createSlice({
+//  redux slice for storing the state of threads
+export const threadSlice = createSlice({   
   name: 'thread',
   initialState: {
     threadId: null,

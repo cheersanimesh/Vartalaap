@@ -95,7 +95,7 @@ const Thread = () => {
                         onChange = {(e) => setInput(e.target.value)}
                     /> 
                     <IconButton
-                        onClick={() => openInNewTab('https://testproject2-d7052.web.app/room/'+threadId)}
+                        onClick={() => openInNewTab('https://vartalaapcalling.web.app/room/'+threadId)}
                     >
                             <RiVideoAddFill />
                         </IconButton> 

@@ -32,17 +32,11 @@ const SidebarThread = ({ id, threadName,date,endTime,startTime,agenda,owner,phot
                 }))
             }    
         >
-            {/*<Avatar 
-                src = {threadInfo[0]?.photo}
-            */}
             <Avatar 
                 src = {photo} />
             <div className = "sidebarThread__details">
             <h3>{threadName}</h3>
-                {/* <h3>{threadName}</h3> */}
-                {/*<p>{threadInfo[0]?.message}</p> */}
                 <p> Organiser : {owner}</p>
-                {/*<small className = "sidebarThread__timestamp">{new Date(threadInfo[0]?.timestamp?.toDate()).toLocaleString()}</small>*/}
                 <p>On {date} From {startTime} to {endTime}</p>
             </div>
         </div>

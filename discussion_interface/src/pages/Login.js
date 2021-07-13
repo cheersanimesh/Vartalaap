@@ -6,7 +6,8 @@ import VartalaapLogo from '../images/VartalaapLogo.png'
 
 const Login = () => {
     
-    const signIn = () =>{
+    const signIn = () =>{  
+        // sign in user 
         auth.signInWithPopup(provider).catch((err) =>{
             alert(err.message)
         })

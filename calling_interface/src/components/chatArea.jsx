@@ -2,6 +2,7 @@ import { useEffect, useState,useRef } from "react";
 import ChatMessage from "./chatMessage";
 import io from "socket.io-client";
 import { Button } from "react-bootstrap";
+import {HiSpeakerphone} from 'react-icons/hi'
 import { FiSend } from "react-icons/fi";
 import '../styles/Room.css'
 
@@ -22,6 +23,13 @@ const ChatArea = ({userName}) =>{
     },[])
     const handleInput=(e) =>{
         setMessage(e.target.value);      // Handling on Change of value in the input field
+    }
+
+    // Adding the feature for speech to text
+    const speechToText = () =>{
+        var speechObject = new SpeechSynthesisUtterance();      
+        speechObject.text = message;
+        window.speechSynthesis.speak(speechObject);
     }
 
     const sendMessage= () =>{
@@ -64,6 +72,13 @@ const ChatArea = ({userName}) =>{
                         onClick={sendMessage}
                         >
                             <FiSend />
+                        </Button>
+                        <Button
+                        className='bg-primary'
+                        size="sm"
+                        onClick={speechToText}
+                        >
+                            <HiSpeakerphone />
                         </Button>
                 </div>
         </div>

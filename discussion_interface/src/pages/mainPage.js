@@ -9,7 +9,7 @@ import {auth} from '../firebase'
 
 function MainPage() { 
 
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser)    // select user from redux store
   const dispatch = useDispatch();
 
   useEffect(() =>{

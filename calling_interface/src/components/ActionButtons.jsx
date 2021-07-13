@@ -3,7 +3,7 @@ import { useState,useEffect, useRef } from 'react';
 import { Button } from 'react-bootstrap'
 import io from "socket.io-client";
 import {FaMicrophone,FaMicrophoneSlash} from 'react-icons/fa';
-import {FcVideoCall,FcNoVideo} from 'react-icons/fc';
+import {FcVideoCall,FcNoVideo,FcEndCall} from 'react-icons/fc';
 import {MdScreenShare, MdStopScreenShare} from 'react-icons/md';
 import {IoHandRightSharp} from 'react-icons/io5';
 import { GiVote } from "react-icons/gi"
@@ -20,7 +20,8 @@ const ActionButtons = ({userName}) =>{
 
         socketConn.current.on('hand raised',(msg)=>{      // on hand raised event handler
             var nm = msg.name;
-            alert("Hand Raised by "+nm);
+            //alert(<IoHandRightSharp />+ "Hand Raised by "+nm);
+            alert(<h1><IoHandRightSharp /> <p> hand Raised by + {nm}</p></h1>);
         }) 
 
    },[])
@@ -84,7 +85,7 @@ const ActionButtons = ({userName}) =>{
             onClick={toggleScreen}
             size="lg"
             >
-                {screenState?<MdScreenShare size={52}/>:<MdStopScreenShare size={52}/>}
+                {screenState ? <MdScreenShare size={52} />: <MdStopScreenShare size={52} />}
             </Button>
             {/* Defining the Raise hand button */}
             <Button
@@ -103,6 +104,7 @@ const ActionButtons = ({userName}) =>{
             >
                 <GiVote style={{color:'white'}} size={52} />
             </Button>
+            {/* End Call Button */}
         </div>
     )
 

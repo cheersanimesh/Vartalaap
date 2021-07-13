@@ -12,7 +12,7 @@ const CreateRoom = (props) => {
 
     return (
         <div className="topCont">
-            <button className="btn btn-info center"onClick={create}>Create room</button>
+            <button className="btn btn-info center" onClick={create}>Create room</button>
         </div>
     );
 };
