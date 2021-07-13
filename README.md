@@ -4,7 +4,9 @@ Your personal chat and complete chat application to connect with users.
 
 ## Documentation
 
-The entire documentation for the project has been compiled into a single document as VartalaapDoc.pdf
+The entire documentation for the project has been compiled into a single document as `Vartalaap_Documentation.pdf` 
+
+A Video demo has been uploaded to : https://drive.google.com/file/d/1dXSZZqYxmQs2fVxQ1witUpyKJODV1Pi-/view?usp=sharing
 
 ## Hosting Urls
 
