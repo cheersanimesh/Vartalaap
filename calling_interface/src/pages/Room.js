@@ -26,7 +26,7 @@ const Room = (props) => {
         console.log('Animesh User Stream')
         socketRef.current = io.connect("https://boxing-syrup-20682.herokuapp.com");
         //socketRef.current = io.connect("http://localhost:8000")
-        socketRef.current.emit('check');
+        socketRef.current.emit('check');      // for debugging purposes
 
         var name= prompt('What should we call you :');       // user input for name of the user
         setUserName(name);          
@@ -69,17 +69,6 @@ const Room = (props) => {
                     const item = peersRef.current.find(p => p.peerID === payload.id);
                     item.peer.signal(payload.signal);
                 });
-                /*
-                socketRef.current.on('user left',id =>{
-                    const peerObj= peersRef.current.find(p=> p.peerID ===id)
-                    if(peerObj){
-                        peerObj.peer.destroy();
-                    }
-                    const peers= peersRef.current.filter(p=> p.peerID === id)
-                    peersRef.current= peers;
-                    setPeers(peers);
-                })
-                */
             });
         },[])
     
