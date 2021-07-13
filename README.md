@@ -6,6 +6,14 @@ Your personal chat and complete chat application to connect with users.
 
 The entire documentation for the project has been compiled into a single document as VartalaapDoc.pdf
 
+## Hosting Urls
+
+- The Discussion Interface is hosted in this link : https://vartalaapdiscussion.web.app/
+
+- The Calling Interface is Hosted in this link: https://vartalaapcalling.web.app/
+
+- The Server is hosted in this Link :
+    https://boxing-syrup-20682.herokuapp.com
 
 ## Some Points regarding the code-base:
 
@@ -13,6 +21,7 @@ The entire documentation for the project has been compiled into a single documen
     - The Discussion Interface
     - The Calling Interface
     - A hosted server
+
 
 - The Discussion interface consists of all the codebase of the project which consists of features before and after the meeting i.e chat discussions, creating meeting, sending email etc.
 
